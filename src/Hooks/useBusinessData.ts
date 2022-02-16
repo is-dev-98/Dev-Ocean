@@ -5,7 +5,7 @@ const useBusinessData = (id?: string) => {
   let { data, isLoading } = useQuery(
     "ListData",
     () => fetchBusinessListData(),
-    { keepPreviousData: true }
+    { refetchOnMount: false }
   );
 
   if (id) {

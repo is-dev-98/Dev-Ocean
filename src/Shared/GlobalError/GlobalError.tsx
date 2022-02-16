@@ -12,8 +12,7 @@ interface Props {
 const GlobalError: React.FC<Props> = ({ errorMsg, subMsg, href = "/" }) => {
   return (
     <div className={style.list_error}>
-      {errorMsg}
-      {!!subMsg && <Link to={href}>{subMsg}</Link>}
+      {errorMsg} {!!subMsg && <Link to={href}>{subMsg}</Link>}
     </div>
   );
 };
