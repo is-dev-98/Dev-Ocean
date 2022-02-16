@@ -24,6 +24,11 @@
   padding: 0 5%;
 }
 
+.card_row:hover {
+  transition: all 0.2s ease-in;
+  background-color: rgb(243, 243, 243);
+}
+
 .card_name {
   margin-right: 10px;
 }
