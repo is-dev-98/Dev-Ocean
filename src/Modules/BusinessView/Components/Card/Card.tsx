@@ -9,19 +9,23 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ title, searchCity }) => {
-  let { data } = useBusinessData({ searchCity });
+  const { data } = useBusinessData({ searchCity });
 
   return (
     <div className={style.card}>
       <div className={style.large_text}>{title}</div>
-      {data.map((entry, index) => (
-        <div key={index} className={style.card_row}>
-          <div className={style.card_name}>{entry.name}</div>
-          <div className={style.card_description}>
-            <span>{entry.description}</span>
+      {data.map((entry, index) => {
+        const { name, address } = entry;
+        const { city, country, number, street, zip } = address;
+        return (
+          <div key={index} className={style.card_row}>
+            <div className={style.card_name}>{name}</div>
+            <div className={style.card_description}>
+              <span>{`${number} ${street}, ${city} ${zip}, ${country}`}</span>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
