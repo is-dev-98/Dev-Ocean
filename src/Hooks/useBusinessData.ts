@@ -1,7 +1,12 @@
 import { useQuery } from "react-query";
 import { fetchBusinessListData } from "../Service";
 
-const useBusinessData = (id?: string) => {
+interface Props {
+  id?: string;
+  searchCity?: string;
+}
+
+const useBusinessData = ({ id, searchCity }: Props = {}) => {
   let { data, isLoading } = useQuery(
     "ListData",
     () => fetchBusinessListData(),
@@ -11,6 +16,12 @@ const useBusinessData = (id?: string) => {
   if (id) {
     data = data?.filter((entry) => {
       return entry.id === id;
+    });
+  }
+
+  if (searchCity) {
+    data = data?.filter((entry) => {
+      return entry.address.city === searchCity;
     });
   }
 

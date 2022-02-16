@@ -19,15 +19,15 @@ interface Type {
 
 const ViewMain: React.FC = () => {
   const { id } = useParams<Type>();
-  let { data, isLoading } = useBusinessData(id);
+  let { data, isLoading } = useBusinessData({ id });
 
   if (isLoading) return null;
 
   if (!data.length) {
-    return <GlobalError errorMsg="No info found." subMsg="Go Back" href="/" />;
+    return <GlobalError errorMsg="No info found." subMsg="Go Back." href="/" />;
   }
 
-  const { address, description, email, name, phone, image } = data[0];
+  const { address, email, phone, image } = data[0];
   const { city, country, number, street, zip } = address;
 
   return (
@@ -49,11 +49,7 @@ const ViewMain: React.FC = () => {
               />
             </SmallContainer>
             <SmallContainer>
-              <Card
-                title="Nearby Places"
-                description={description}
-                name={name}
-              />
+              <Card searchCity={city} title="Nearby Places" />
             </SmallContainer>
           </FlexWrap>
         </Container>

@@ -1,22 +1,24 @@
 import React from "react";
-import { FOUR_ARRAY } from "../../../../Service/constants";
+import useBusinessData from "../../../../Hooks/useBusinessData";
+
 import style from "./Card.module.css";
 
 interface Props {
-  name: string;
   title: string;
-  description: string;
+  searchCity: string;
 }
 
-const Card: React.FC<Props> = ({ title, name, description }) => {
+const Card: React.FC<Props> = ({ title, searchCity }) => {
+  let { data } = useBusinessData({ searchCity });
+
   return (
     <div className={style.card}>
       <div className={style.large_text}>{title}</div>
-      {FOUR_ARRAY.map((entry, index) => (
+      {data.map((entry, index) => (
         <div key={index} className={style.card_row}>
-          <div className={style.card_name}>{name}</div>
+          <div className={style.card_name}>{entry.name}</div>
           <div className={style.card_description}>
-            <span>{description}</span>
+            <span>{entry.description}</span>
           </div>
         </div>
       ))}
