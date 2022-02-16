@@ -6,9 +6,10 @@ import style from "./Header.module.css";
 
 const Header: React.FC = () => {
   const navigate = useHistory();
+
   return (
     <div className={style.header}>
-      <img className={style.logo_img} src="/logo192.png" alt="react_logo" />
+      <div className={style.logo_img}></div>
       <span
         onClick={() => {
           navigate.push("/");

@@ -6,11 +6,12 @@ import useBusinessData from "../../Hooks/useBusinessData";
 import Card from "./Components/Card/Card";
 import Image from "./Components/Image/Image";
 
+import GlobalError from "../../Shared/GlobalError/GlobalError";
+
 import Container from "./Components/Container/Container";
 import FlexWrap from "./Components/Shared/FlexWrap/FlexWrap";
 import InfoContainer from "./Components/Shared/InfoContainer/InfoContainer";
 import SmallContainer from "./Components/Shared/SmallContainer/SmallContainer";
-import GlobalError from "../../Shared/GlobalError/GlobalError";
 
 interface Type {
   id: string;
@@ -23,13 +24,7 @@ const ViewMain: React.FC = () => {
   if (isLoading) return null;
 
   if (!data.length) {
-    return (
-      <GlobalError
-        errorMsg="The Page does not exist"
-        subMsg="Go Back"
-        href="/"
-      />
-    );
+    return <GlobalError errorMsg="No info found." subMsg="Go Back" href="/" />;
   }
 
   const { address, description, email, name, phone, image } = data[0];
