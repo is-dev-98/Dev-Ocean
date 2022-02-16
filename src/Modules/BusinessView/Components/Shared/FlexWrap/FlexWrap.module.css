@@ -1,0 +1,9 @@
+.flex_wrap {
+  display: flex;
+}
+
+@media only screen and (max-width: 900px) {
+  .flex_wrap {
+    flex-direction: column;
+  }
+}

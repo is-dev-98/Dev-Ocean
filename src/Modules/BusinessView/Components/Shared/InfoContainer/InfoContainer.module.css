@@ -1,0 +1,24 @@
+.large_text {
+  color: #323232;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 5vh;
+}
+.small_text {
+  color: #636364;
+  line-height: 2;
+  font-weight: 300;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+.info_container {
+  padding: 2vh 10% 0 10%;
+  display: inline-block;
+  width: 30%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .info_container {
+    padding-left: 0;
+  }
+}

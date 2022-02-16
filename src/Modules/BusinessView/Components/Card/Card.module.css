@@ -1,0 +1,50 @@
+.large_text {
+  color: #323232;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 5vh;
+}
+
+.card {
+  background-color: white;
+  padding: 2vh 2vw;
+  margin-right: 10%;
+}
+
+.card_row {
+  color: #636364;
+  min-height: 30px;
+  background: #f8f8fa;
+  border-bottom: 4px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 5%;
+}
+
+.card_name {
+  margin-right: 10px;
+}
+
+.card_description {
+  width: 80%;
+  display: block;
+  text-align: left;
+}
+
+@media only screen and (max-width: 1350px) {
+  .card_description {
+    line-height: 1;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .card {
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .card_row {
+    min-height: 60px;
+  }
+}

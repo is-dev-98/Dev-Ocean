@@ -1,0 +1,5 @@
+.container {
+  min-height: 80vh;
+  min-width: 90vw;
+  padding: 5vh 5vw 5vh 5vw;
+}
