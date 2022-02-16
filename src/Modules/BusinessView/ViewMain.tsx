@@ -31,30 +31,22 @@ const ViewMain: React.FC = () => {
   const { city, country, number, street, zip } = address;
 
   return (
-    <>
-      {!isLoading ? (
-        <Container>
-          <Image image={image} />
-          <FlexWrap>
-            <SmallContainer>
-              <InfoContainer
-                title="Address"
-                firstLine={`${number} ${street}`}
-                secondLine={`${country}, ${city} ${zip}`}
-              />
-              <InfoContainer
-                title="Contact"
-                firstLine={phone}
-                secondLine={email}
-              />
-            </SmallContainer>
-            <SmallContainer>
-              <Card searchCity={city} title="Nearby Places" />
-            </SmallContainer>
-          </FlexWrap>
-        </Container>
-      ) : null}
-    </>
+    <Container>
+      <Image image={image} />
+      <FlexWrap>
+        <SmallContainer>
+          <InfoContainer
+            title="Address"
+            firstLine={`${number} ${street}`}
+            secondLine={`${country}, ${city} ${zip}`}
+          />
+          <InfoContainer title="Contact" firstLine={phone} secondLine={email} />
+        </SmallContainer>
+        <SmallContainer>
+          <Card searchCity={city} title="Nearby Places" />
+        </SmallContainer>
+      </FlexWrap>
+    </Container>
   );
 };
 

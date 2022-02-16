@@ -14,7 +14,7 @@ const ListMain: React.FC = () => {
     return <GlobalError errorMsg="List is Empty. Try Refreshing" />;
   }
 
-  return <>{!isLoading ? <ListTable data={data} /> : null}</>;
+  return <ListTable data={data} />;
 };
 
 export default ListMain;
