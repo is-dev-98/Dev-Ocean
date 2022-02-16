@@ -17,6 +17,7 @@
   background: #f8f8fa;
   border-bottom: 4px solid white;
   display: flex;
+  cursor: pointer;
   justify-content: space-between;
   align-items: center;
   height: 50px;

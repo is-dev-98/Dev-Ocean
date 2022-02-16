@@ -1,10 +1,10 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import style from "./InfoContainer.module.css";
 
 interface Props {
   title: string;
   firstLine: string;
-  secondLine: string;
+  secondLine: string | ReactElement;
 }
 
 const InfoContainer: React.FC<Props> = ({ title, firstLine, secondLine }) => {

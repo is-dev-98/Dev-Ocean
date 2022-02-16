@@ -40,7 +40,11 @@ const ViewMain: React.FC = () => {
             firstLine={`${number} ${street}`}
             secondLine={`${country}, ${city} ${zip}`}
           />
-          <InfoContainer title="Contact" firstLine={phone} secondLine={email} />
+          <InfoContainer
+            title="Contact"
+            firstLine={phone}
+            secondLine={<a href={`mailto:${email}`}>{email}</a>}
+          />
         </SmallContainer>
         <SmallContainer>
           <Card searchCity={city} title="Nearby Places" />
